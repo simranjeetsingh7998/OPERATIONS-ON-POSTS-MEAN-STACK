@@ -1,0 +1,9 @@
+<app-header></app-header>
+<main>
+    <!-- We are not using binging when we are using services -->
+    <!-- <app-create-post (postCreated) = "onPostAdded($event)"></app-create-post> event binding to listen to postCreated -->
+    <!-- <app-post-list [posts] = "storedPosts"></app-post-list> -->
+    <router-outlet></router-outlet> <!-- provides the hook for the angular router -->
+    <!-- <app-create-post></app-create-post>
+    <app-post-list></app-post-list> -->
+</main>

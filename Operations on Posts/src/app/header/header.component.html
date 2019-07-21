@@ -1,0 +1,27 @@
+<mat-toolbar color = "primary">
+    <span>
+        <a routerLink = "/">My Messages</a>
+    </span>
+    <span class = "spacer"></span>
+    <ul>
+
+        <li *ngIf = "userIsAuthenticated">
+            <a mat-button routerLink = "/create" color = "white" routerLinkActive = "mat-accent">New Post</a> <!-- angular router link directive -->
+        <!-- this is used by the angular router to turn this into a normal link where we clicks and captured by the angular router so that it
+        can actually stop the default behaviour of sending the http requests and just re-rednder the page for the page we tried to visit -->
+        </li>
+
+        <li *ngIf = "!userIsAuthenticated">
+            <a mat-button routerLink = "/auth/login" color = "white" routerLinkActive = "mat-accent">Login</a> <!-- angular router link directive -->
+        </li>
+
+        <li *ngIf = "!userIsAuthenticated">
+            <a mat-button routerLink = "/auth/signup" color = "white" routerLinkActive = "mat-accent">Sign Up</a> <!-- angular router link directive -->
+        </li>
+
+        <li *ngIf = "userIsAuthenticated">
+            <button mat-button (click) = "onLogout()">Logout</button>
+        </li>
+
+    </ul>
+</mat-toolbar>
